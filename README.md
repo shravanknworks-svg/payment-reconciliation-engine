@@ -1,71 +1,53 @@
-# Payment Reconciliation Engine - Python FastAPI
+# Payment Reconciliation Engine
 
-A FinTech-style payment reconciliation service that compares an internal payment file against a bank/vendor settlement file and identifies:
+## Overview
 
-- Matched payments
-- Missing in bank file
-- Missing in internal file
-- Amount mismatches
-- Duplicate transactions
-- Date mismatches
+A FinTech reconciliation platform built using Python, FastAPI, and MongoDB that compares payment records from multiple sources and identifies mismatches, missing transactions, and exceptions.
 
-## Tech Stack
+## Features
 
-- Python 3.10+
+- Payment reconciliation
+- Exception reporting
+- CSV file processing
+- REST APIs
+- MongoDB integration
+- Unit testing with PyTest
+
+## Technology Stack
+
+- Python 3.13
 - FastAPI
+- MongoDB
 - Pandas
-- Uvicorn
-- Pytest
+- Docker
+- PyTest
 
-## Project Structure
-
-```text
-payment-reconciliation-engine/
-├── app/
-│   ├── main.py
-│   ├── reconciliation_service.py
-│   └── models.py
-├── sample_files/
-│   ├── internal_payments.csv
-│   └── bank_settlement.csv
-├── tests/
-│   └── test_reconciliation.py
-├── requirements.txt
-└── README.md
-```
-
-## Run Locally
+## Installation
 
 ```bash
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
+```
+
+## Run Application
+
+```bash
 uvicorn app.main:app --reload
 ```
 
-Open Swagger UI:
+Open:
 
 ```text
 http://localhost:8000/docs
 ```
 
-## API Endpoint
+## Run Tests
 
-### POST /reconcile
-
-Upload two CSV files:
-
-- `internal_file`
-- `bank_file`
-
-The API returns reconciliation summary and detailed exception records.
-
-## Expected CSV Columns
-
-Both files should contain:
-
-```text
-transaction_id,customer_id,amount,currency,payment_date,status
+```bash
+pytest
 ```
 
-## Example GitHub Resume Bullet
+## Author
 
-Developed a Python-based Payment Reconciliation Engine using FastAPI and Pandas to compare internal payment records against external bank settlement files, identify exceptions, generate reconciliation summaries, and support audit-ready financial operations.
+Shravan Kumar Nellutla
