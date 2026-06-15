@@ -50,4 +50,4 @@ pytest
 
 ## Author
 
-Shravan Kumar Nellutla
+Shravan K Nellutla
