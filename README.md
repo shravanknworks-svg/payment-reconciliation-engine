@@ -50,7 +50,8 @@ pytest
 ## Sample Use Case
 This project simulates a FinTech payment reconciliation engine that validates and compares payment records from internal systems and external settlement providers. It automatically identifies mismatches, missing transactions, and exceptions while generating reconciliation reports for business users.
 
-## Sample Input
+## Sample Request
+```text
 Internal Payments File (internal_payments.csv)
 transaction_id,amount,status
 TXN1001,100.00,SUCCESS
@@ -61,7 +62,9 @@ transaction_id,amount,status
 TXN1001,100.00,SUCCESS
 TXN1002,300.00,SUCCESS
 TXN1004,700.00,SUCCESS
-## Sample Output
+```
+## Sample Response
+```json
 Reconciliation Summary
 {
   "total_internal_transactions": 3,
@@ -88,7 +91,7 @@ Exception Report
     "issue": "Missing in Internal System"
   }
 ]
-
+```
 
 ## Author
 
